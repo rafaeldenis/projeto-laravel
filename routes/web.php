@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,18 +18,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/cliente', [ClienteController::class, 'index'])->name('cliente.index');
 
 Route::get('/exemplo', function () {
     return view('exemplo');
 });
 
 Route::get('/cadastro-cliente', function () {
-    return view('cadastro_cliente');
+    return view('projeto-php/clientes/cadastro_cliente');
 });
 
 Route::get('/listar-cliente', function () {
-    return view('listar_cliente');
+    return view('projeto-php/clientes/listar_cliente');
 });
 
 Route::get('/visualizar-pdf', function () {

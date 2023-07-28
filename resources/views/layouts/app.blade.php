@@ -7,6 +7,8 @@
     <title>Meu Projeto</title>
     <!-- Inclua aqui os links para os arquivos CSS, como o Bootstrap, caso necessário -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('css/tabela.css') }}" rel="stylesheet">
 </head>
 <body>
     @include('navbar')

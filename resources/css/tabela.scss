@@ -1,77 +1,14 @@
-// Importando a fonte Nunito
-@import url('https://fonts.bunny.net/css?family=Nunito');
 
-// Variáveis
-@import 'variables';
+@import 'cores';
 
-// Bootstrap
-@import 'bootstrap/scss/bootstrap';
+// /* Importando a fonte LATO (fonte padrão do texto da página) no  do Google fonts */
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
-// Estilos personalizados para o menu lateral
-.sidebar {
-  height: 100vh; /* Define a altura do menu lateral para ocupar toda a altura da tela */
-  width: 250px;
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  font-family: 'Nunito', sans-serif; /* Utiliza a fonte Nunito para o texto no menu */
-}
+// /* Importando a fonte CINZEL (fonte usada no nome/marca/logo da unifesp */
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+/* Configuração geral das tabelas. */
+/************************************************************************** TABELAS ******************************************************************************************/
 
-.sidebar h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar li {
-  margin-bottom: 10px;
-}
-
-.sidebar li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.content {
-  padding: 20px;
-}
-@import url('https://fonts.bunny.net/css?family=Nunito');
-
-// Variáveis
-@import 'variables';
-
-// Bootstrap
-@import 'bootstrap/scss/bootstrap';
-
-// Estilos personalizados para a barra de navegação
-.navbar {
-  background-color: #333;
-  color: #fff;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.navbar li {
-  margin-right: 20px;
-}
-
-.navbar li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.content {
-  padding: 20px;
-}
 /* Configuração geral das tabelas. */
 .tabela-unifesp {
 
@@ -228,4 +165,69 @@
         /*Bootstrap 4 override*/
         -webkit-appearance: searchfield-cancel-button;
       }
+}
+
+.tabela-default {
+   /************* Modo telas pequenas **********/
+
+    // $breakpoint-alpha: 480px; // adjust to your needs
+    //$breakpoint-alpha: 769px; // adjust to your needs
+    $breakpoint-alpha: 921px; // adjust to your needs
+
+    margin: 1em 0;
+    min-width: 300px; // adjust to your needs
+
+    // tr {
+    //     border-top: 1px solid #ddd;
+    //     border-bottom: 1px solid #ddd;
+    // }
+
+    th {
+        display: none; // for accessibility, use a visually hidden method here instead! Thanks, reddit!
+    }
+
+    tr {
+        border: 10px solid $verde-claro-tres;
+    }
+
+    td {
+        display: block;
+        // border-bottom: 1px solid black;
+
+        &:first-child {
+            padding-top: .5em;
+        }
+
+        &:last-child {
+            padding-bottom: .5em;
+        }
+
+        &:before {
+            content: attr(data-th)": "; // who knew you could do this? The internet, that's who.
+            font-weight: bold;
+
+            // optional stuff to make it look nicer
+            // width: 6.5em; // magic number :( adjust according to your own content
+            width: 9em; // magic number :( adjust according to your own content
+            display: inline-block;
+            // end options
+
+            @media (min-width: $breakpoint-alpha) {
+                display: none;
+            }
+        }
+    }
+
+    th,
+    td {
+        @media (min-width: $breakpoint-alpha) {
+            display: table-cell;
+        }
+    }
+
+    tr {
+        @media (min-width: $breakpoint-alpha) {
+            border: none;
+        }
+    }
 }
