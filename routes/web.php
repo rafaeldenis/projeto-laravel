@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/cliente', [ClienteController::class, 'index'])->name('cliente.index');
+Route::post('/clientes', [ClienteController::class, 'store'])->name('clientes.store');
 
 Route::get('/exemplo', function () {
     return view('exemplo');
@@ -30,7 +31,7 @@ Route::get('/cadastro-cliente', function () {
 
 Route::get('/listar-cliente', function () {
     return view('projeto-php/clientes/listar_cliente');
-});
+})->name('listar-cliente');
 
 Route::get('/visualizar-pdf', function () {
     return view('visualizar_curriculo_pdf');

@@ -1,33 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if(session('success'))
+    <div class="alert alert-success"> {{ session('success') }} </div>
+@endif
+<i data-fa-icon="fas fa-trash-alt" class="float-right"></i>
 <div class="table-responsive">
-    <table class="table table-striped tabela-unifesp mt-0">
+    <table class="table table-striped mt-0">
         <thead>
             <tr>
                 <th>Código</th>
-                <th>Nome</th>
-                <th>RG</th>
                 <th>CPF</th>
-                <th>Situação</th>
+                <th>NOME</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
                 @forelse ($clientes as $cliente)
                 <tr>
-                    <td data-th="Código">{{ $cliente['codigo'] }}</td>
-                    <td data-th="nome">{{ $cliente['nome'] }}</td>
-                    <td data-th="rg">{{ $cliente['rg'] }}</td>
-                    <td data-th="cpf">{{ $cliente['cpf'] }}</td>
-                    <td data-th="situacao">{{ $cliente['situacao'] }}</td>
-                    <td data-th="Internacional">
-                        @if ( $cliente['situacao']  == 'AT')
-                            <span class="badge badge-pill badge-primary">ATIVO</span>
-                        @else
-                            <span class="badge badge-pill badge-secondary">INATIVO</span>
-                        @endif
-                    </td>
+                    <td data-th="Código">{{ $cliente->codigo }}</td>
+                    <td data-th="nome">{{ $cliente->cpf}}</td>
+                    <td data-th="cpf">{{ $cliente->nome }} {{ $cliente->sobrenome }} </td>
+
 
                     <td data-th="Ações">
                         <div class="d-flex">

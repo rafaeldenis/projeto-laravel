@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
 class ClienteController extends Controller
@@ -12,8 +13,18 @@ class ClienteController extends Controller
 
         //echo "OOOOOlieee";
 
-        // Crie um array com 5 registros de clientes
-    $clientes = [
+        // Crie um array com 5 registros de clientes]
+
+        $clientes = Cliente::all();
+        return view(
+            "projeto-php.clientes.listar_cliente",
+            compact(['clientes'
+
+
+                    ])
+        );
+
+    /*$clientes = [
         [
             'codigo' => 1,
             'nome' => 'João da Silva',
@@ -43,7 +54,30 @@ class ClienteController extends Controller
 
 
                     ])
-        );
+        );*/
 
+    }
+
+    public function store(Request $request){
+
+        //dd($request->all());
+
+        $cliente = new Cliente();
+        $cliente->nome = $request->input('nome');
+        $cliente->sobrenome = $request->input('sobrenome');
+        $cliente->cpf = $request->input('cpf');
+        $cliente->cep = $request->input('cep');
+        $cliente->logradouro = $request->input('logradouro');
+        $cliente->cod_cidade = $request->input('cod_cidade');
+        $cliente->descr_cidade = $request->input('descr_cidade');
+        $cliente->ddd_cel = $request->input('ddd_cel');
+        $cliente->tel_cel = $request->input('tel_cel');
+        $cliente->e_mail = $request->input('e_mail');
+
+        // Salva o novo cliente no banco de dados
+        $cliente->save();
+
+    // Redireciona para alguma rota ou página de sucesso
+    return redirect()->route('cliente.index')->with('success', 'Cliente cadastrado com sucesso!');
     }
 }

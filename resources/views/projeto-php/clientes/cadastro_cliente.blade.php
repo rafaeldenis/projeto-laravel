@@ -1,31 +1,83 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <h2>Cadastro de Cliente</h2>
-        <form action="" method="post">
-            @csrf <!-- Token CSRF para proteção contra ataques Cross-Site Request Forgery -->
-            <div class="mb-3">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" name="nome" required>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Cadastro de Clientes</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route('clientes.store') }}">
+                        @csrf
+
+                        <div class="form-group row">
+                            <label for="nome" class="col-md-2 col-form-label">Nome</label>
+                            <div class="col-md-4">
+                                <input id="nome" type="text" class="form-control" name="nome" required autofocus>
+                            </div>
+                            <label for="sobrenome" class="col-md-2 col-form-label">Sobrenome</label>
+                            <div class="col-md-4">
+                                <input id="sobrenome" type="text" class="form-control" name="sobrenome" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="cpf" class="col-md-2 col-form-label">CPF</label>
+                            <div class="col-md-4">
+                                <input id="cpf" type="text" class="form-control" name="cpf" required data-mask="000.000.000-00">
+                            </div>
+                            <label for="cep" class="col-md-2 col-form-label">CEP</label>
+                            <div class="col-md-4">
+                                <input id="cep" type="text" class="form-control" name="cep" required data-mask="00000-000">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="logradouro" class="col-md-2 col-form-label">Logradouro</label>
+                            <div class="col-md-10">
+                                <input id="logradouro" type="text" class="form-control" name="logradouro" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="cod_cidade" class="col-md-3 col-form-label">Código da Cidade</label>
+                            <div class="col-md-3">
+                                <input id="cod_cidade" type="text" class="form-control" name="cod_cidade" required>
+                            </div>
+                            <label for="descr_cidade" class="col-md-3 col-form-label" style="white-space: nowrap;">Descrição da Cidade</label>
+                            <div class="col-md-3">
+                                <input id="descr_cidade" type="text" class="form-control" name="descr_cidade" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="ddd_cel" class="col-md-2 col-form-label">DDD Celular</label>
+                            <div class="col-md-2">
+                                <input id="ddd_cel" type="text" class="form-control" name="ddd_cel" required data-mask="00">
+                            </div>
+                            <label for="tel_cel" class="col-md-2 col-form-label" style="white-space: nowrap;">Telefone Celular</label>
+                            <div class="col-md-6">
+                                <input id="tel_cel" type="text" class="form-control" name="tel_cel" required data-mask="(00) 00000-0000">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="e_mail" class="col-md-2 col-form-label">E-mail</label>
+                            <div class="col-md-10">
+                                <input id="e_mail" type="email" class="form-control" name="e_mail" required>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-3">
+                                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="sobrenome" class="form-label">Sobrenome</label>
-                <input type="text" class="form-control" id="sobrenome" name="sobrenome" required>
-            </div>
-            <div class="mb-3">
-                <label for="documento" class="form-label">Documento</label>
-                <input type="text" class="form-control" id="documento" name="documento" required>
-            </div>
-            <div class="mb-3">
-                <label for="cpf" class="form-label">CPF</label>
-                <input type="text" class="form-control" id="cpf" name="cpf" required>
-            </div>
-            <div class="mb-3">
-                <label for="rg" class="form-label">RG</label>
-                <input type="text" class="form-control" id="rg" name="rg" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Salvar</button>
-        </form>
+        </div>
     </div>
+</div>
 @endsection
