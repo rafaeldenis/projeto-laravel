@@ -13,10 +13,10 @@
                 <!-- Aqui você pode adicionar o logo da empresa, se desejar -->
             </div>
             <div class="col-md-4 text-right">
-                Fale Conosco<br>
-                ZAP
-                <a href="https://api.whatsapp.com/send?phone=SEU_NUMERO_DE_TELEFONE" target="_blank" rel="noopener noreferrer">
-                <i style="color: #25d366;" class="fab fa-whatsapp"></i> ZAP
+                Fale Conoscooo<br>
+
+                <a href="https://api.whatsapp.com/send?phone=5511973927355" target="_blank" rel="noopener noreferrer">
+                <i style="color: #25d366; font-size: 50px; width: 50px;" class="fab fa-whatsapp"></i>
 
 
                 </a>
