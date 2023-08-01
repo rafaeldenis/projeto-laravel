@@ -1,84 +1,31 @@
 {
-
-
     "private": true,
-
-
     "type": "module",
-
-
     "devDependencies": {
-
-
         "@popperjs/core": "^2.11.6",
-
-
         "axios": "^1.1.2",
-
-
         "bootstrap": "^5.3.1",
-
-
+        "cross-env": "^7.0.3",
         "laravel-mix": "^6.0.49",
-
-
         "laravel-vite-plugin": "^0.7.5",
-
-
         "resolve-url-loader": "^5.0.0",
-
-
         "sass": "^1.56.1",
-
-
         "sass-loader": "^12.1.0",
-
-
-        "vite": "^4.0.0"
-
-
+        "vite": "^4.0.0",
+        "webpack": "^5.88.2",
+        "webpack-cli": "^5.1.4"
     },
-
-
     "dependencies": {
-
-
         "@fortawesome/fontawesome-free": "^6.4.0",
-
-
         "jquery": "^3.7.0"
-
-
     },
-
-
     "scripts": {
-
-
-        "dev": "npm run development",
-
-
-        "development": "SET NODE_ENV=development && npx webpack --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
-
-
+        "dev": "cross-env NODE_ENV=development npm run development",
+        "development": "npx webpack --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
-
-
         "watch-poll": "npm run watch -- --watch-poll",
-
-
         "hot": "cross-env NODE_ENV=development webpack serve --inline --hot",
-
-
-        "prod": "npm run production",
-
-
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-
-
+        "prod": "cross-env NODE_ENV=production npm run production",
+        "production": "node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     }
-
-
 }
-
-

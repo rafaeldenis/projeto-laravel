@@ -11,6 +11,8 @@
 
 
 
+
+
     <style>
 
 
@@ -40,6 +42,8 @@
 
     <!-- Rodapé -->
     @include('includes.footer')
+
     <script src="{{ asset('js/app.js') }}"></script> <!-- Inclua aqui os links para os arquivos JS, como o Bootstrap e jQuery, caso necessário -->
+
 </body>
 </html>

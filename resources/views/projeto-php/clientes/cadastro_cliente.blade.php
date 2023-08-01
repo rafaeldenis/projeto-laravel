@@ -81,3 +81,11 @@
     </div>
 </div>
 @endsection
+
+
+<script>
+$(document).ready(function() {
+  // This code will be executed when the document is ready.
+  alert('jQuery is working!');
+});
+</script>
