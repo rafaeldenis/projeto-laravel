@@ -25,11 +25,11 @@
                         <div class="form-group row">
                             <label for="cpf" class="col-md-2 col-form-label">CPF</label>
                             <div class="col-md-4">
-                                <input id="cpf" type="text" class="form-control" name="cpf" required data-mask="000.000.000-00">
+                                <input id="cpf" type="text" class="form-control" name="cpf" required>
                             </div>
                             <label for="cep" class="col-md-2 col-form-label">CEP</label>
                             <div class="col-md-4">
-                                <input id="cep" type="text" class="form-control" name="cep" required data-mask="00000-000">
+                                <input id="cep" type="text" class="form-control" name="cep" required>
                             </div>
                         </div>
 
@@ -83,9 +83,23 @@
 @endsection
 
 
-<script>
-$(document).ready(function() {
-  // This code will be executed when the document is ready.
-  alert('jQuery is working!');
-});
-</script>
+@section('scripts')
+    <script>
+        $(document).ready(function() {
+             // Configuração do Inputmask para CPF
+        Inputmask('999.999.999-99').mask('#cpf');
+
+        // Configuração do Inputmask para CEP
+        Inputmask('99999-999').mask('#cep');
+          // This code will be executed when the document is ready.
+
+        });
+    </script>
+@endsection
+
+
+
+
+
+
+

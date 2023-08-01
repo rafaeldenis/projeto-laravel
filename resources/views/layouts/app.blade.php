@@ -44,6 +44,17 @@
     @include('includes.footer')
 
     <script src="{{ asset('js/app.js') }}"></script> <!-- Inclua aqui os links para os arquivos JS, como o Bootstrap e jQuery, caso necessário -->
+     <!-- jquery ui -->
+     <script
+    src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+    integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
+    crossorigin="anonymous"></script>
 
+
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+    <!-- Javascript do Switch Button -->
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    @yield('scripts')
 </body>
 </html>

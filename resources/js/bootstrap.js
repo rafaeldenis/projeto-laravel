@@ -1,5 +1,8 @@
 import './bootstrap.js';
+
 import $ from 'jquery';
+
+window.$ = window.jQuery = $;
 
 /**
  * Tornar o jQuery disponível globalmente (opcional, mas pode ser útil)
