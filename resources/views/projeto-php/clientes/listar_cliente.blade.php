@@ -27,17 +27,15 @@
                     <td data-th="Ações">
                         <div class="d-flex">
 
-                                <a href="javascript:void(0)"
-                                    class="btn edit-modal"
-                                    role="button"
-                                    title="Editar"
-                                    data-toggle="tooltip"
-                                    data-placement="top"
-                                    data-id=""
-                                    data-urlapishow=""
-                                >
-                                    <i class="fas fa-edit"></i>
-                                </a>
+
+                        <a href="{{ route('clientes.cadastro', ['cliente' => $cliente->codigo ]) }}"
+                            class="btn edit-modal"
+                            role="button"
+                            title="Editar"
+                            data-toggle="tooltip"
+                            data-placement="top">
+                            <i class="fas fa-edit"></i>
+                        </a>
 
 
 

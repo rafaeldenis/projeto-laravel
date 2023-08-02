@@ -80,4 +80,13 @@ class ClienteController extends Controller
     // Redireciona para alguma rota ou página de sucesso
     return redirect()->route('cliente.index')->with('success', 'Cliente cadastrado com sucesso!');
     }
+    public function edit(Cliente $cliente)
+    {
+        return view('projeto-php.clientes.editar_cliente', compact('cliente'));
+    }
+    public function cadastro(Cliente $cliente = null)
+    {
+        dd("aquiiiii");
+        return view('projeto-php.clientes.cadastro_cliente', compact('cliente'));
+    }
 }

@@ -29,6 +29,10 @@ Route::get('/cadastro-cliente', function () {
     return view('projeto-php/clientes/cadastro_cliente');
 });
 
+Route::get('clientes/{cliente}/edit', [ClienteController::class, 'edit'])->name('clientes.edit');
+Route::get('clientes/cadastro/{cliente?}', [ClienteController::class, 'cadastro'])->name('clientes.cadastro');
+Route::put('clientes/{cliente}', 'ClienteController@update')->name('clientes.update');
+
 Route::get('/listar-cliente', function () {
     return view('projeto-php/clientes/listar_cliente');
 })->name('listar-cliente');

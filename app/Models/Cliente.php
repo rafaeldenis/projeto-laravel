@@ -12,6 +12,8 @@ class Cliente extends Model
 
     protected $table = 'clientes';
 
+    protected $primaryKey = 'codigo'; // Definindo a chave primária
+
     protected $fillable = [
         'nome',
         'sobrenome',
