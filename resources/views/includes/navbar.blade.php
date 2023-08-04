@@ -23,10 +23,18 @@
             <a class="nav-link" href="#">Sobre</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/cadastro-cliente">Cadastro Clientes</a>
+            <a class="nav-link" href="{{ route('clientes.cadastro') }}">Cadastro Clientes</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="{{ route('cliente.index') }}">Listar Cliente</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('minhas_senhas.create') }}">Cadastro Senhas</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('minhas_senhas.index') }}">Listar Senhas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/visualizar-pdf">Curriculo em Pdf</a>

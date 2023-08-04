@@ -65,6 +65,8 @@ class ClienteController extends Controller
         $cliente = new Cliente();
         $cliente->nome = $request->input('nome');
         $cliente->sobrenome = $request->input('sobrenome');
+
+
         $cliente->cpf = $request->input('cpf');
         $cliente->cep = $request->input('cep');
         $cliente->logradouro = $request->input('logradouro');
@@ -86,7 +88,15 @@ class ClienteController extends Controller
     }
     public function cadastro(Cliente $cliente = null)
     {
-        dd("aquiiiii");
+        //dd("aquiiiii");
+        //dd($cliente);
         return view('projeto-php.clientes.cadastro_cliente', compact('cliente'));
+    }
+
+    public function update(Request $request, Cliente $cliente = null){
+
+       //dd("atualizar dados do cliente");
+        $cliente->update($request->all());
+        return redirect()->route('cliente.index')->with('success', 'Cliente atualizado com sucesso!');
     }
 }
