@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ContaPessoalController;
 use App\Http\Controllers\ExcelExportController;
 use App\Http\Controllers\MinhaSenhaController;
+use App\Models\ContaPessoal;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,5 +52,13 @@ Route::post('/minhas-senhas', [MinhaSenhaController::class, 'store'])->name('min
 Route::get('/minhas-senhas/{senha}/edit', [MinhaSenhaController::class, 'edit'])->name('minhas_senhas.edit');
 Route::put('/minhas-senhas/{senha}', [MinhaSenhaController::class, 'update'])->name('minhas_senhas.update');
 Route::delete('/minhas-senhas/{senha}', [MinhaSenhaController::class, 'destroy'])->name('minhas_senhas.destroy');
+
+Route::get('/conta-pessoal', [ContaPessoalController::class, 'index'])->name('conta_pessoal.index');
+Route::get('/conta-pessoal/create', [ContaPessoalController::class, 'create'])->name('conta_pessoal.create');
+Route::post('/conta-pessoal', [ContaPessoalController::class, 'store'])->name('conta_pessoal.store');
+Route::get('/conta-pessoal/{senha}/edit', [ContaPessoalController::class, 'edit'])->name('conta_pessoal.edit');
+Route::put('/conta-pessoal/{senha}', [ContaPessoalController::class, 'update'])->name('conta_pessoal.update');
+Route::delete('/conta-pessoal/{senha}', [ContaPessoalController::class, 'destroy'])->name('conta_pessoal.destroy');
+
 
 Route::get('/export', [ExcelExportController::class, 'export'])->name('export');

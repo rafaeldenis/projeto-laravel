@@ -17,10 +17,11 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link" href="{{ route('conta_pessoal.create') }}">Cadastro Contas</a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">Sobre</a>
+            <a class="nav-link" href="{{ route('conta_pessoal.index') }}">Listar Contas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('clientes.cadastro') }}">Cadastro Clientes</a>

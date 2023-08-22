@@ -8,7 +8,7 @@
                 <div class="card-header">Cadastro de Senhas</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ isset($senha) ? route('senhas.update', $senha->codigo) : route('minhas_senhas.store') }}">
+                    <form method="POST" action="{{ isset($senha) ? route('minhas_senhas.update', $senha->codigo) : route('minhas_senhas.store') }}">
                         @csrf
                         @if(isset($senha))
                             @method('PUT')

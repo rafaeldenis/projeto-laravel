@@ -35,8 +35,8 @@ class MinhaSenhaController extends Controller
         $senhas = $query->get();
 
 
-        //dd($senhas);
-        return view('projeto-php.minhas-senhas..index', compact('senhas'));
+        dd($senhas);
+        return view('projeto-php.minhas-senhas.index', compact('senhas'));
     }
 
     public function create(MinhaSenha $senha = null)
@@ -55,7 +55,8 @@ class MinhaSenhaController extends Controller
 
     public function edit(MinhaSenha $senha)
     {
-        return view('minhas_senhas.form', compact('senha'));
+        //dd($senha);
+        return view('projeto-php.minhas-senhas.cadastro_minhas_senhas', compact('senha'));
     }
 
     public function update(Request $request, MinhaSenha $senha)

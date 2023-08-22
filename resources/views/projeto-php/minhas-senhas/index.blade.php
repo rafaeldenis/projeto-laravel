@@ -29,7 +29,7 @@
                     <td>{{ $senha->cpf_dono_senha }}</td>
                     <td>{{ $senha->situacao }}</td>
                     <td>{{ $senha->nome_responsavel }}</td>
-                    <td>{{ $senha->chave_acesso }}</td>
+                    <td>{{ base64_encode($senha->chave_acesso) }}</td>
                     <td>
                         <div class="d-flex">
                             <a href="{{ route('minhas_senhas.edit', ['senha' => $senha->codigo]) }}"
